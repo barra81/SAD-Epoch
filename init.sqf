@@ -113,10 +113,10 @@ if (isDedicated) then {
 	"rcrHideRoof" addPublicVariableEventHandler {
 		_packet = _this select 1;
 		_nearestGates = _packet select 1;
-			{
+		{
 			_x setVariable ["GateLowered", true, true];
 			[nil, _x, "per", rHideObject, true] call RE;
-			} foreach _nearestGates;
+		} foreach _nearestGates;
 	};
 	"rcrUnHideRoof" addPublicVariableEventHandler {
 		_packet = _this select 1;
