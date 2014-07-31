@@ -1,7 +1,7 @@
 private ["_finished","_finishedTime","_posplr","_dirplr","_object"];
 
 
-	player removeAction s_player_deploybike;
+	//player removeAction s_player_deploybike;
 	player removeWeapon "ItemToolbox";
 
 	player playActionNow "Medic";
@@ -21,6 +21,10 @@ private ["_finished","_finishedTime","_posplr","_dirplr","_object"];
 		};
 		if (r_interrupt) then {
 			r_doLoop = false;
+			if (vehicle player == player) then {
+         		[objNull, player, rSwitchMove,""] call RE;
+				player playActionNow "stop";						
+            };			
 		};
 		sleep 0.1;
 	};
