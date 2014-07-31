@@ -1,4 +1,12 @@
 class ExtraRc {
+
+class ItemCompass {
+  class menuItem1 {
+    text = "Combine Bars"
+	script = "[[],1] call epoch_returnChange ";   //'\z\addons\dayz_code\compile\epoch_returnChange.sqf'";
+ };
+}; 
+
 class sandbag_nest_kit {
   class menuItem1 {
     text = "Build M240 Nest";
