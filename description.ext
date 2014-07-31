@@ -310,7 +310,6 @@ class BTC_Hud
 	};
 	#include "dzgm\icons.hpp"
 };
-//#include "sys\snap_build\points.hpp"
 #include "sys\extra_rc.hpp"
 #include "dzgm\groupManagement.hpp"
 #include "ckc\ckc_defines.hpp"
