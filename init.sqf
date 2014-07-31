@@ -108,52 +108,28 @@ if (!isDedicated) then {
 	_nul = [] execVM "external\dzai_initclient.sqf";
 };
 
-
-
-
-	//HideableRoofs
-	
+//HideableRoofs
 if (isDedicated) then {
-
 	"rcrHideRoof" addPublicVariableEventHandler {
-		
-	_packet = _this select 1;
-	_nearestGates = _packet select 1;
-	
-	{
-     _x setVariable ["GateLowered", true, true];
-	[nil, _x, "per", rHideObject, true] call RE;
-	
-	
-	} foreach _nearestGates;
-	
-	
-	
+		_packet = _this select 1;
+		_nearestGates = _packet select 1;
+			{
+			_x setVariable ["GateLowered", true, true];
+			[nil, _x, "per", rHideObject, true] call RE;
+			} foreach _nearestGates;
 	};
-	
-	
 	"rcrUnHideRoof" addPublicVariableEventHandler {
-	
-	_packet = _this select 1;
-	_nearestGates = _packet select 1;
-	
-	{
-	_x setVariable ["GateLowered", false, true];
-	[nil, _x, "per", rHideObject, false] call RE;
-	
-	
-	} foreach _nearestGates;
-	
+		_packet = _this select 1;
+		_nearestGates = _packet select 1;
+		{
+			_x setVariable ["GateLowered", false, true];
+			[nil, _x, "per", rHideObject, false] call RE;
+		} foreach _nearestGates;
 	};
-	
 };
-
 
 [] execVM "rcr\jipHide.sqf";
 #include "rcr\REsec.sqf"
-
-
-
 
 //Start Dynamic Weather
 execVM "sys\DynamicWeatherEffects.sqf";
