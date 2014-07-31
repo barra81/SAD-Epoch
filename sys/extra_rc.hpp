@@ -3,7 +3,7 @@ class ExtraRc {
 class ItemCompass {
   class menuItem1 {
     text = "Combine Bars"
-	script = "[[],1] call epoch_returnChange ";   //'\z\addons\dayz_code\compile\epoch_returnChange.sqf'";
+	script = "[[],1] call epoch_returnChange ";  
  };
 }; 
 
