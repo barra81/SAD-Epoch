@@ -20,7 +20,7 @@ class sandbag_nest_kit {
   };
   class Infostand_2_EP1 {
     text = "Build RoofControlPanel";
-	script = "[""Infostand_2_EP1"",[""ItemToolbox"",""ItemEtool"",""ItemCrowbar""],[[""30m_plot_kit"",1]],[0,1.5,0.6]] execVM ""sys\snap_build\player_build.sqf"";";       
+	script = "[""Infostand_2_EP1"",[""ItemToolbox"",""ItemEtool"",""ItemCrowbar""],[[""30m_plot_kit"",1]],[0,1.5,0.6]] execVM ""sys\snap_pro\player_build.sqf""; execVM ""rcr\panelText.sqf""; ";      
  };
  };
  
