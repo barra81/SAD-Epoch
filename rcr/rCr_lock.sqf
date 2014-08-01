@@ -4,7 +4,7 @@
 				player playActionNow "Medic";
 
 				[player,_sfx,0,false] call dayz_zombieSpeak;
-				[player,50,true,(getPosATL player)] spawn player_alertZombies;
+				[player,10,true,(getPosATL player)] spawn player_alertZombies;
 
 				r_interrupt = false;
 				_animState = animationState player;
@@ -68,5 +68,5 @@ _inMotion = _object getVariable ["inMotion",0];
 			
 	} else {
 
-	cutText [format["Cancelled locking of Panel !"], "PLAIN DOWN"];
+	cutText [format["Canceled locking of Panel !"], "PLAIN DOWN"];
 	};					

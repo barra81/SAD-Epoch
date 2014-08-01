@@ -3,7 +3,7 @@
 				player playActionNow "Medic";
 
 				[player,_sfx,0,false] call dayz_zombieSpeak;
-				[player,50,true,(getPosATL player)] spawn player_alertZombies;
+				[player,10,true,(getPosATL player)] spawn player_alertZombies;
 
 				r_interrupt = false;
 				_animState = animationState player;
@@ -71,6 +71,6 @@ cutText [format["You entered the wrong Key"], "PLAIN DOWN"];
 
 } else {
 
-cutText [format["Cancelled unlocking!"], "PLAIN DOWN"];
+cutText [format["Canceled unlocking!"], "PLAIN DOWN"];
 
 };
