@@ -527,16 +527,16 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		if (s_player_unlockvault < 0) then {
 			if(_typeOfCursorTarget in DZE_LockedStorage) then {
 				if(_ownerID == dayz_combination || _ownerID == dayz_playerUID) then {
-					_combi = player addAction [format[localize "STR_EPOCH_ACTIONS_OPEN",_text], "\z\addons\dayz_code\actions\vault_unlock.sqf",_cursorTarget, 0, false, true, "",""];
+					_combi = player addAction [format[localize "STR_EPOCH_ACTIONS_OPEN",_text], "\z\addons\dayz_code\actions\vault_unlock.sqf",_cursorTarget, 1, false, true, "",""];
 					s_player_combi set [count s_player_combi,_combi];
 				} else {
-					_combi = player addAction [format[localize "STR_EPOCH_ACTIONS_UNLOCK",_text], "\z\addons\dayz_code\actions\vault_combination_1.sqf",_cursorTarget, 0, false, true, "",""];
+					_combi = player addAction [format[localize "STR_EPOCH_ACTIONS_UNLOCK",_text], "\z\addons\dayz_code\actions\vault_combination_1.sqf",_cursorTarget, 1, false, true, "",""];
 					s_player_combi set [count s_player_combi,_combi];
 				};
 				s_player_unlockvault = 1;
 			} else {
 				if(_ownerID != dayz_combination && _ownerID != dayz_playerUID) then {
-					_combi = player addAction [localize "STR_EPOCH_ACTIONS_RECOMBO", "\z\addons\dayz_code\actions\vault_combination_1.sqf",_cursorTarget, 0, false, true, "",""];
+					_combi = player addAction [localize "STR_EPOCH_ACTIONS_RECOMBO", "\z\addons\dayz_code\actions\vault_combination_1.sqf",_cursorTarget, 1, false, true, "",""];
 					s_player_combi set [count s_player_combi,_combi];
 					s_player_unlockvault = 1;
 				};
@@ -730,7 +730,7 @@ _hasStuff = "ItemToolbox" in _itemsPlayer;
 _hasPPole = "30m_plot_kit" in _mags;
 if (_canDo && (speed player <= 1) && _hasStuff && _hasPPole) then {
 	if (s_player_buildSkeet < 0) then {
-		s_player_buildSkeet = player addaction[("<t color=""#FFFF00"">" + ("Build SkeetMachine") +"</t>"),"external\SkeetMachine.sqf","",5,false,true,"", ""];
+		s_player_buildSkeet = player addaction[("<t color=""#FFFF00"">" + ("Build SkeetMachine") +"</t>"),"external\SkeetMachine.sqf","",0,false,true,"", ""];
 	};
 } else {
 	player removeAction s_player_buildSkeet;
@@ -742,7 +742,7 @@ _allowedDistance2 = 2;
 if (!isNull cursorTarget and !_inVehicle and !_isPZombie and (player distance cursorTarget < _allowedDistance2) and _canDo) then {
 if((speed player <= 1) && (_typeOfCursorTarget == "SkeetMachine")) then {
 	if (s_player_startSkeet < 0)  then {
-		s_player_startSkeet = player addaction [("<t color=""#FFFF00"">" + ("Start SkeetMachine") +"</t>"),"external\SkeetMachineSwitch.sqf","",5,false,true,"",""];  
+		s_player_startSkeet = player addaction [("<t color=""#FFFF00"">" + ("Start SkeetMachine") +"</t>"),"external\SkeetMachineSwitch.sqf","",0,false,true,"",""];  
 	};
 } else {
 	player removeAction s_player_startSkeet;
@@ -751,7 +751,7 @@ if((speed player <= 1) && (_typeOfCursorTarget == "SkeetMachine")) then {
  
 if((speed player <= 1) && (_typeOfCursorTarget == "SkeetMachine")) then {
 	if ( s_player_remSkeet < 0) then {
-		s_player_remSkeet = player addaction[("<t color=""#FFFF00"">" + ("Destroy SkeetMachine") +"</t>"),"external\SkeetMachineRemove.sqf","",5,false,true,"", ""];
+		s_player_remSkeet = player addaction[("<t color=""#FFFF00"">" + ("Destroy SkeetMachine") +"</t>"),"external\SkeetMachineRemove.sqf","",0,false,true,"", ""];
 	};
 } else {
 	player removeAction s_player_remSkeet;
@@ -778,11 +778,11 @@ if((speed player <= 1) && (_typeOfCursorTarget == "SkeetMachine")) then {
 
 		if (s_player_lockvault < 0) then {
 			if(_ownerID == dayz_combination || _ownerID == dayz_playerUID) then {
-				s_player_lockvault = player addAction [format[localize "STR_EPOCH_ACTIONS_LOCK",_text], "\z\addons\dayz_code\actions\vault_lock.sqf",_cursorTarget, 0, false, true, "",""];
+				s_player_lockvault = player addAction [format[localize "STR_EPOCH_ACTIONS_LOCK",_text], "\z\addons\dayz_code\actions\vault_lock.sqf",_cursorTarget, 1, false, true, "",""];
 			};
 		};
 		if (s_player_packvault < 0 && (_ownerID == dayz_combination || _ownerID == dayz_playerUID)) then {
-			s_player_packvault = player addAction [format["<t color='#ff0000'>%1</t>",(format[localize "STR_EPOCH_ACTIONS_PACK",_text])], "\z\addons\dayz_code\actions\vault_pack.sqf",_cursorTarget, 0, false, true, "",""];
+			s_player_packvault = player addAction [format["<t color='#ff0000'>%1</t>",(format[localize "STR_EPOCH_ACTIONS_PACK",_text])], "\z\addons\dayz_code\actions\vault_pack.sqf",_cursorTarget, 1, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_packvault;
