@@ -16,9 +16,7 @@ while {_chuteCheck} do {
    _anim = animationState player;  
    _halo =  ["para_pilot","halofreefall_non","halofreefall_non_halofreefall_f", "halofreefall_non_halofreefall_l", "halofreefall_non_halofreefall_r", "halofreefall_non_halofreefall_b", "halofreefall_f", "halofreefall_fl","halofreefall_fr", "halofreefall_r", "halofreefall_l", "halofreefall_b", "halofreefall_br", "halofreefall_bl"];  
    _state = _anim in _halo;
-   
 
-   ["conRed",format [" %1 ", _anim]] call diaglog;
 
    if (!_state) exitWith {
       
@@ -34,10 +32,6 @@ while {_chuteCheck} do {
      sleep 3;
      _member = getPlayerUID player;
      _player = typeOf player;
-
-     ["conGreen",format [" actualskin %1 ", _player]] call diaglog;
-
-
 
    if (_member in _clanArr) then {  
 
