@@ -1351,7 +1351,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone1";
 			expCond="(player distance zone1) < 75;";
-			expActiv="[""trader city Khush"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""trader city Khush"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""trader city Khush"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
@@ -1369,7 +1369,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone2";
 			expCond="(player distance zone2) < 75;";
-			expActiv="[""trader city Nur"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""trader city Nur"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""trader city Nur"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
@@ -1387,7 +1387,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone3";
 			expCond="(player distance zone3) < 75;";
-			expActiv="[""trader city Garm"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""trader city Garm"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""trader city Garm"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
@@ -1405,7 +1405,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone4";
 			expCond="(player distance zone4) < 30;";
-			expActiv="[""Black Market"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""Black Market"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Black Market"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
@@ -1442,7 +1442,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone5";
 			expCond="(player distance zone5) < 30;";
-			expActiv="[""Bandit Trader"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""Bandit Trader"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Bandit Trader"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
@@ -1459,7 +1459,7 @@ class Mission
 			age="UNKNOWN";
 			name="zone6";
 			expCond="(player distance zone6) < 45;";
-			expActiv="[""Airplane Dealer"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expActiv="[""Airplane Dealer"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Airplane Dealer"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
