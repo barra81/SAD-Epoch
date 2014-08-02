@@ -8,20 +8,20 @@ USE_POSITIONS = true;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
 USE_SPEEDLIMIT = true;	// very secret function, nobody is supposed to find out what it does.
-	SPEEDLIMIT = 25;		// Only used if USE_SPEEDLIMIT is true.
+	SPEEDLIMIT = 20;		// Only used if USE_SPEEDLIMIT is true.
 USE_SIGNS = true;		// use this to build signs around the SafeZone
 LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
 [
-	[[431.62454,303.29282,5554.8208],75,true],
-	[[1958.948,51.60416,12555.685],75,true],
-	[[10870.342,283.72119,6306.75],75,true],
-	[[7416.8306,271.48111,155.77698],30,true],
-	[[11270.841,115.92039,12660.39],30,true],
-	[[5261.8662,83.96122,11163.853],30,true],
-	[[751.90857,557.38123,10491.069],30,true],
-	[[8039.3813,300.80963,2009.7328],30,true]
+	[[zone1],75,true],
+	[[zone2],75,true],
+	[[zone3],75,true],
+	[[8030.74,0,2005.81],30,true],
+	[[748.843,0,10485.5],30,true],
+	[[5288.41,0,11157],45,true],
+	[[11127.3,0,12662.9],30,true],
+	[[7408.47,0,96.8015],30,true]
 ];
 if (isServer) exitWith
 {
@@ -37,7 +37,7 @@ if (isServer) exitWith
 				{
 					_location = [(_center select 0) + ((cos _i) * _radius), (_center select 1) + ((sin _i) * _radius),0];
 					_dir = ((_center select 0) - (_location select 0)) atan2 ((_center select 1) - (_location select 1));
-					_object = createVehicle ['Sign_sphere25cm_EP1', _location, [], 0, 'CAN_COLLIDE'];
+					_object = createVehicle ['Sign_sphere100cm_EP1', _location, [], 0, 'CAN_COLLIDE'];
 					_object setDir _dir;
 					//	_object setVehicleInit 'this setObjectTexture [0, ''Addons\SafeZones\sign.paa''];';
 				};
