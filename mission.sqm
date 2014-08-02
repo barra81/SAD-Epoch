@@ -1173,7 +1173,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=20;
+		items=21;
 		class Item0
 		{
 			position[]={6622.5166,301.31479,6751.1309};
@@ -1257,7 +1257,7 @@ class Mission
 			position[]={431.62454,303.29282,5554.8208};
 			name="tradercitykush";
 			text="Trader City Khush";
-			type="hd_dot";
+			type="hd_join";
 			colorName="ColorGreen";
 		};
 		class Item14
@@ -1265,7 +1265,7 @@ class Mission
 			position[]={1958.948,51.60416,12555.685};
 			name="Trader_City_Nur";
 			text="Trader City Nur";
-			type="hd_dot";
+			type="hd_join";
 			colorName="ColorBlack";
 		};
 		class Item15
@@ -1273,7 +1273,7 @@ class Mission
 			position[]={10870.342,283.72119,6306.75};
 			name="Trader_City_Garm";
 			text="Trader City Garm";
-			type="hd_dot";
+			type="hd_join";
 			colorName="ColorBlack";
 		};
 		class Item16

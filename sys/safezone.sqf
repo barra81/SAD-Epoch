@@ -14,9 +14,9 @@ LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or le
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
 [
-	[[zone1],75,true],
-	[[zone2],75,true],
-	[[zone3],75,true],
+	[[431.62454,0,5554.8208],75,true],
+	[[1958.948,0,12555.685],75,true],
+	[[10870.342,0,6306.75],75,true],
 	[[8030.74,0,2005.81],30,true],
 	[[748.843,0,10485.5],30,true],
 	[[5288.41,0,11157],45,true],
