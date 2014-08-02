@@ -1319,7 +1319,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=6;
+		items=8;
 		class Item0
 		{
 			position[]={436.03763,303.48236,5550.8608};
@@ -1384,7 +1384,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="zone4";
-			expCond="(player distance zone4) < 30;";
+			expCond="(player distance zone4) < 25;";
 			expActiv="[""Black Market"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Black Market"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
@@ -1401,7 +1401,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="zone5";
-			expCond="(player distance zone5) < 30;";
+			expCond="(player distance zone5) < 25;";
 			expActiv="[""Bandit Trader"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Bandit Trader"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
@@ -1421,6 +1421,40 @@ class Mission
 			expCond="(player distance zone6) < 45;";
 			expActiv="[""Airplane Dealer"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Airplane Dealer"",true,""leave""] spawn player_traderCity; canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={11127.252,0,12662.867};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zone7";
+			expCond="(player distance zone7) < 25;";
+			expActiv="[""North Wholesaler"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expDesactiv="[""North Wholesaler"",true,""leave""] spawn player_traderCity; canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={7408.4741,0,96.801483};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zone8";
+			expCond="(player distance zone8) < 25;";
+			expActiv="[""South Wholesaler"",true,""enter""] spawn player_traderCity; canbuild = false; [player] spawn SafeZoneBarrels;";
+			expDesactiv="[""South Wholesaler"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
 			};
