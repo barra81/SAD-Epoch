@@ -36,14 +36,14 @@ if (_setOK) then {
 
 
 _object = nearestObject [player, "MAP_phonebox"];
-_keycode = dayz_combination;
+_keycode = dayz_RoofCombination;
 _actual = _object getVariable ["CharacterID", "0"];
 _inMotion = _object getVariable ["inMotion",0];
 
 
 _classname = "Infostand_2_EP1";
 
- If ((_actual == dayz_combination)) then {
+ If ((_actual == dayz_RoofCombination)) then {
 	        _location	= _object getVariable["OEMPos",(getposATL _object)];
 			_dir = getDir _object;
 

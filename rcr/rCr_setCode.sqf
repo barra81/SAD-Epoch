@@ -12,7 +12,7 @@
 	
 						
 _object = nearestObject [player, "Infostand_2_EP1"];
-_newCombo = dayz_combination;
+_newCombo = dayz_RoofCombination;
 
 _actual = _object getVariable ["CharacterID", "0"];
 _inMotion = _object getVariable ["inMotion",0];
