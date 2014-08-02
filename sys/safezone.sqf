@@ -4,12 +4,12 @@
 */
 USE_CANBUILD = true;		// if you don't want to define your own positions
 USE_TraderCity = false;	//	if you don't want to define your own positions (Epoch 1.0.5)
-USE_POSITIONS = true;	// to use own positions and radius
+USE_POSITIONS = false;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
 USE_SPEEDLIMIT = true;	// very secret function, nobody is supposed to find out what it does.
 	SPEEDLIMIT = 20;		// Only used if USE_SPEEDLIMIT is true.
-USE_SIGNS = true;		// use this to build signs around the SafeZone
+USE_SIGNS = false;		// use this to build signs around the SafeZone
 LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
