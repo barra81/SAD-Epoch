@@ -153,6 +153,7 @@ boil_tin_cans = [
 ];
 
 dayz_combination = "";
+dayz_RoofCombination = "";
 dayz_humanitytarget = "";
 dayz_combatLog = "";
 canRoll = true;
