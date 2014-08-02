@@ -1173,7 +1173,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=23;
+		items=20;
 		class Item0
 		{
 			position[]={6622.5166,301.31479,6751.1309};
@@ -1316,30 +1316,10 @@ class Mission
 			type="mil_end";
 			colorName="ColorBlack";
 		};
-		class Item21
-		{
-			position[]={4936.1304,76.9291,11773.455};
-			name="Arena";
-			text="PVP-Arena";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=180;
-			b=180;
-		};
-		class Item22
-		{
-			position[]={4936.1304,76.9291,11773.455};
-			name="Arena2";
-			text="PVP-Arena";
-			type="hd_dot";
-			colorName="ColorBlack";
-		};
 	};
 	class Sensors
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			position[]={436.03763,303.48236,5550.8608};
@@ -1413,26 +1393,6 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={4936.1304,76.9291,11773.455};
-			a=180;
-			b=180;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="Arena";
-			expCond="(vehicle player) in thislist;";
-			expActiv="Arena = [] execVM ""external\pvparena.sqf"";";
-			expDesactiv="terminate Arena; titleText [""You have leaving the arena."", ""PLAIN DOWN"", 3];";
-			class Effects
-			{
-				titleType="TEXT";
-				titleEffect="PLAIN DOWN";
-				title="You are entering the PVP-Arena!";
-			};
-		};
-		class Item5
-		{
 			position[]={751.90857,557.38123,10491.069};
 			a=100;
 			b=100;
@@ -1448,7 +1408,7 @@ class Mission
 			{
 			};
 		};
-		class Item6
+		class Item5
 		{
 			position[]={5261.8662,83.96122,11163.853};
 			a=100;
