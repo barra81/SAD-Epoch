@@ -133,6 +133,12 @@ if (isDedicated) then {
 [] execVM "rcr\jipHide.sqf";
 #include "rcr\REsec.sqf"
 
+
+
+//Kron String Functions
+
+ [] execVM "sys\kron\kron_strings.sqf";
+
 //Start Dynamic Weather
 execVM "sys\DynamicWeatherEffects.sqf";
 [] execVM "sys\safezone.sqf";
