@@ -10,24 +10,26 @@
 	[] execVM "SafeZone.sqf";
 	5. Save the init.sqf, repack your mpmission, upload it to your gameserver and restart your server
 */
-USE_CANBUILD = true;		// if you don't want to define your own positions
-USE_TraderCity = true;	//	if you don't want to define your own positions (Epoch 1.0.5)
-USE_POSITIONS = false;	// to use own positions and radius
+USE_CANBUILD = false;		// if you don't want to define your own positions
+USE_TraderCity = false;	//	if you don't want to define your own positions (Epoch 1.0.5)
+USE_POSITIONS = true;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
 USE_SPEEDLIMIT = true;	// very secret function, nobody is supposed to find out what it does.
 	SPEEDLIMIT = 20;		// Only used if USE_SPEEDLIMIT is true.
 USE_SIGNS = true;		// use this to build signs around the SafeZone
-LOG_EnterLeave = true;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
+LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
 [
-	[[6325.6772,7807.7412],200,true],
-	[[4063.4226,11664.19],200,true],
-	[[11447.472,11364.504],200,true],
-	[[1606.6443,7803.5156],150,true],
-	[[12944.227,12766.889],150,true],
-	[[5068.6636,9723.4248],100,true]
+	[[431.62454,5554.8208],75,true], 	// Trader City Khush
+	[[1958.948,12555.685],75,true], 	// Trader City Nur
+	[[10870.342,6306.75],75,true],		// Trader City Garm
+	[[8030.74,2005.81],30,true],		// Black Market
+	[[748.843,10485.5],30,true],		// Bandit Trader
+	[[5288.41,11157],45,true],			// Airplane Dealer
+	[[11127.3,12662.9],30,true],		// North Wholesaler
+	[[7408.47,96.8015],30,true]			// South Wholesaler
 ];
 if (isServer) exitWith
 {
