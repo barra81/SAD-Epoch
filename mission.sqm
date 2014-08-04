@@ -1173,7 +1173,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=23;
+		items=21;
 		class Item0
 		{
 			position[]={6622.5166,301.31479,6751.1309};
@@ -1257,7 +1257,7 @@ class Mission
 			position[]={431.62454,303.29282,5554.8208};
 			name="tradercitykush";
 			text="Trader City Khush";
-			type="hd_flag";
+			type="hd_join";
 			colorName="ColorGreen";
 		};
 		class Item14
@@ -1265,7 +1265,7 @@ class Mission
 			position[]={1958.948,51.60416,12555.685};
 			name="Trader_City_Nur";
 			text="Trader City Nur";
-			type="hd_flag";
+			type="hd_join";
 			colorName="ColorBlack";
 		};
 		class Item15
@@ -1273,36 +1273,36 @@ class Mission
 			position[]={10870.342,283.72119,6306.75};
 			name="Trader_City_Garm";
 			text="Trader City Garm";
-			type="hd_flag";
+			type="hd_join";
 			colorName="ColorBlack";
 		};
 		class Item16
 		{
-			position[]={7416.8306,271.48111,155.77698};
+			position[]={7408.47,0,96.8015};
 			name="Wholesaler";
 			text="Wholesaler";
-			type="mil_dot";
+			type="hd_dot";
 			colorName="ColorBlack";
 		};
 		class Item17
 		{
-			position[]={11270.841,115.92039,12660.39};
+			position[]={11127.3,0,12662.9};
 			name="Wholesaler_1";
 			text="Wholesaler";
-			type="mil_dot";
+			type="hd_dot";
 			colorName="ColorBlack";
 		};
 		class Item18
 		{
-			position[]={5261.8662,83.96122,11163.853};
+			position[]={5288.41,-7.62,11157};
 			name="Airplane Dealer";
 			text="Airplane Dealer";
-			type="o_plane";
+			type="hd_pickup";
 			colorName="ColorBlack";
 		};
 		class Item19
 		{
-			position[]={751.90857,557.38123,10491.069};
+			position[]={748.843,0,10485.5};
 			name="BanditTrader";
 			text="Bandit Trader";
 			type="hd_warning";
@@ -1310,36 +1310,16 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={8039.3813,300.80963,2009.7328};
+			position[]={8030.74,0,2005.81};
 			name="BlackMarketVendor";
 			text="Black Market Trader";
-			type="mil_end";
-			colorName="ColorBlack";
-		};
-		class Item21
-		{
-			position[]={4936.1304,76.9291,11773.455};
-			name="Arena";
-			text="PVP-Arena";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=180;
-			b=180;
-		};
-		class Item22
-		{
-			position[]={4936.1304,76.9291,11773.455};
-			name="Arena2";
-			text="PVP-Arena";
-			type="hd_dot";
+			type="hd_end";
 			colorName="ColorBlack";
 		};
 	};
 	class Sensors
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			position[]={436.03763,303.48236,5550.8608};
@@ -1396,7 +1376,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={8039.3813,300.80963,2009.7328};
+			position[]={8030.74,0,2005.81};
 			a=100;
 			b=100;
 			activationBy="WEST";
@@ -1413,27 +1393,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={4936.1304,76.9291,11773.455};
-			a=180;
-			b=180;
-			activationBy="WEST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="Arena";
-			expCond="(vehicle player) in thislist;";
-			expActiv="Arena = [] execVM ""external\pvparena.sqf"";";
-			expDesactiv="terminate Arena; titleText [""You have leaving the arena."", ""PLAIN DOWN"", 3];";
-			class Effects
-			{
-				titleType="TEXT";
-				titleEffect="PLAIN DOWN";
-				title="You are entering the PVP-Arena!";
-			};
-		};
-		class Item5
-		{
-			position[]={751.90857,557.38123,10491.069};
+			position[]={748.843,0,10485.5};
 			a=100;
 			b=100;
 			activationBy="WEST";
@@ -1448,9 +1408,9 @@ class Mission
 			{
 			};
 		};
-		class Item6
+		class Item5
 		{
-			position[]={5261.8662,83.96122,11163.853};
+			position[]={5288.41,-7.62,11157};
 			a=100;
 			b=100;
 			activationBy="WEST";
@@ -1461,6 +1421,40 @@ class Mission
 			expCond="(player distance zone6) < 45;";
 			expActiv="[""Airplane Dealer"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
 			expDesactiv="[""Airplane Dealer"",true,""leave""] spawn player_traderCity; canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={11127.3,0,12662.9};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zone7";
+			expCond="(player distance zone7) < 30;";
+			expActiv="[""North Wholesaler"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
+			expDesactiv="[""North Wholesaler"",true,""leave""] spawn player_traderCity; canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={7408.47,0,96.8015};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zone8";
+			expCond="(player distance zone8) < 30;";
+			expActiv="[""South Wholesaler"",true,""enter""] spawn player_traderCity; canbuild = false; [vehicle player] spawn SafeZoneBarrels;";
+			expDesactiv="[""South Wholesaler"",true,""leave""] spawn player_traderCity; canbuild = true;";
 			class Effects
 			{
 			};
