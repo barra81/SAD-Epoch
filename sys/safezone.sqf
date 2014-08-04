@@ -1,27 +1,33 @@
 /*
    by: http://infiSTAR.de || http://DayzAntiHack.com
-   *updated on 21.07.2014
+   *updated on 30.07.2014
+	
+	Instructions:
+	1. Copy paste this pastebin code into a file called SafeZone.sqf - save the file.
+	2. Now extract your mpmission pbo and put the SafeZone.sqf into the extracted folder.
+	3. Open the init.sqf of the mpmission.
+	4. At the bottom of the file add
+	[] execVM "SafeZone.sqf";
+	5. Save the init.sqf, repack your mpmission, upload it to your gameserver and restart your server
 */
 USE_CANBUILD = true;		// if you don't want to define your own positions
-USE_TraderCity = false;	//	if you don't want to define your own positions (Epoch 1.0.5)
+USE_TraderCity = true;	//	if you don't want to define your own positions (Epoch 1.0.5)
 USE_POSITIONS = false;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
 USE_SPEEDLIMIT = true;	// very secret function, nobody is supposed to find out what it does.
 	SPEEDLIMIT = 20;		// Only used if USE_SPEEDLIMIT is true.
-USE_SIGNS = false;		// use this to build signs around the SafeZone
-LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
+USE_SIGNS = true;		// use this to build signs around the SafeZone
+LOG_EnterLeave = true;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
 [
-	[[431.62454,0,5554.8208],75,true],
-	[[1958.948,0,12555.685],75,true],
-	[[10870.342,0,6306.75],75,true],
-	[[8030.74,0,2005.81],30,true],
-	[[748.843,0,10485.5],30,true],
-	[[5288.41,0,11157],45,true],
-	[[11127.3,0,12662.9],30,true],
-	[[7408.47,0,96.8015],30,true]
+	[[6325.6772,7807.7412],200,true],
+	[[4063.4226,11664.19],200,true],
+	[[11447.472,11364.504],200,true],
+	[[1606.6443,7803.5156],150,true],
+	[[12944.227,12766.889],150,true],
+	[[5068.6636,9723.4248],100,true]
 ];
 if (isServer) exitWith
 {
@@ -38,8 +44,9 @@ if (isServer) exitWith
 					_location = [(_center select 0) + ((cos _i) * _radius), (_center select 1) + ((sin _i) * _radius),0];
 					_dir = ((_center select 0) - (_location select 0)) atan2 ((_center select 1) - (_location select 1));
 					_object = createVehicle ['Sign_sphere100cm_EP1', _location, [], 0, 'CAN_COLLIDE'];
+					//	_object = createVehicle ['Sign_sphere100cm_EP1', _location, [], 0, 'CAN_COLLIDE'];
+					//	_object setVehicleInit 'this setObjectTexture [0,''Addons\SafeZones\sign.paa''];';
 					_object setDir _dir;
-					//	_object setVehicleInit 'this setObjectTexture [0, ''Addons\SafeZones\sign.paa''];';
 				};
 			};
 		} forEach _infiSZ;
