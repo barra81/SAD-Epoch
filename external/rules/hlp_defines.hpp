@@ -108,8 +108,8 @@ class RscStructuredText_help
     colorText[] = {1,1,1,.5};
     text = "";
     shadow = 2;
-    font = "Zeppelin32";
-    SizeEx = 0.03300;
+    font = "Bitstream";
+    SizeEx = 0.02300;
     fixedWidth = 0;
     x = 0;
     y = 0;
@@ -128,8 +128,8 @@ class RscText_help
     colorText[] = {1,1,1,.5};
     text = "";
     shadow = 2;
-    font = "Zeppelin32";
-    SizeEx = 0.03300;
+    font = "Bitstream";
+    SizeEx = 0.02300;
     fixedWidth = 0;
     x = 0;
     y = 0;
@@ -146,7 +146,7 @@ class RscPicture_help
     style = ST_PICTURE;
     colorBackground[] = {0,0,0,0};
     colorText[] = {1,1,1,1};
-    font = "Zeppelin32";
+    font = "Bitstream";
     sizeEx = 0;
     lineSpacing = 0;
     text = "";
@@ -182,8 +182,8 @@ class RscButton_help
     w = 0.055589;
     h = 0.039216;
     shadow = 2;
-    font = "Zeppelin32";
-    sizeEx = 0.04921;
+    font = "Bitstream";
+    sizeEx = 0.03921;
     offsetX = 0.003;
     offsetY = 0.003;
     offsetPressedX = 0.002;
@@ -199,8 +199,8 @@ class RscFrame_help
     shadow = 2;
     colorBackground[] = {1,1,1,1};
     colorText[] = {1,1,1,0.9};
-    font = "Zeppelin32";
-    sizeEx = 0.04;
+    font = "Bitstream";
+    sizeEx = 0.03;
     text = "";
 };
 class RscListBox_help
@@ -214,8 +214,8 @@ class RscListBox_help
     colorText[] = {1,1,1,.5};
     text = "";
     shadow = 2;
-    font = "Zeppelin32";
-    SizeEx = 0.04300;
+    font = "Bitstream";
+    SizeEx = 0.02300;
     fixedWidth = 0;
     x = 0;
     y = 0;
@@ -231,8 +231,8 @@ class BOX_help
     style = ST_CENTER;
     shadow = 2;
     colorText[] = {1,1,1,1};
-    font = "Zeppelin32";
-    sizeEx = 0.03;
+    font = "Bitstream";
+    sizeEx = 0.02;
     colorBackground[] = { 0.2,0.2,0.2, 0.5 }; 
     text = ""; 
 
@@ -263,43 +263,43 @@ class RscHTML_Help
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.034740;
+		sizeEx = 0.024740;
 	};
 	class H2
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.038646;
+		sizeEx = 0.028646;
 	};
 	class H3
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.038646;
+		sizeEx = 0.028646;
 	};
 	class H4
 	{
 		font = "Zeppelin33Italic";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.030833;
+		sizeEx = 0.020833;
 	};
 	class H5
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.030833;
+		sizeEx = 0.020833;
 	};
 	class H6
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.030833;
+		sizeEx = 0.020833;
 	};
 	class P
 	{
 		font = "Zeppelin32";
 		fontBold = "Zeppelin33";
-		sizeEx = 0.030833;
+		sizeEx = 0.020833;
 	};
 	prevPage = "\ca\ui\data\arrow_left_ca.paa";
 	nextPage = "\ca\ui\data\arrow_right_ca.paa";

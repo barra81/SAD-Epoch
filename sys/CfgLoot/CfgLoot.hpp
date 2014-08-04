@@ -234,7 +234,7 @@ class CfgLoot {
 		,{"8Rnd_B_Beneli_Pellets",0.16}
 		,{"HandRoadFlare",0.07}
 		,{"8Rnd_9x18_MakarovSD",0.01}
-		,{"ItemComboLock",0.07}
+		,{"ItemComboLock",0.05}
 		,{"SmokeShell",0.04}
 		,{"FoodMRE",0.04}
 		,{"ItemHotwireKit",0.03}
@@ -267,7 +267,7 @@ class CfgLoot {
 		,{"ItemPainkiller",0.06}
 		,{"ItemWire",0.01}
 		,{"ItemTankTrap",0.03}
-		,{"ItemComboLock",0.06}
+		,{"ItemComboLock",0.04}
 		,{"ItemSledgeHead",0.02}
 		,{"ItemDocument",0.02}
 	};

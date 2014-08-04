@@ -184,7 +184,7 @@ class CfgLootSmall {
 		{"8Rnd_B_Beneli_Pellets",0.17},
 		{"HandRoadFlare",0.08},
 		{"8Rnd_9x18_MakarovSD",0.01},
-		{"ItemComboLock",0.07},
+		{"ItemComboLock",0.05},
 		{"SmokeShell",0.04},
 		{"ItemHotwireKit",0.01}
 	};
@@ -205,7 +205,7 @@ class CfgLootSmall {
 		{"FoodCanPasta",0.06},
 		{"ItemBandage",0.1},
 		{"ItemPainkiller",0.06},
-		{"ItemComboLock",0.06},
+		{"ItemComboLock",0.04},
 		{"ItemSledgeHead",0.02}
 	};
 	clothes[] = {

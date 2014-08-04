@@ -16,7 +16,7 @@ class help_box: Box_help
 class hlp_frame: RscFrame_help
 {
 	idc = 1800;
-	text = "";
+	text = "Rules - smileanddie.org";
 	x = 0.14777 * safezoneW + safezoneX;
 	y = 0.0789474 * safezoneH + safezoneY;
 	w = 0.707986 * safezoneW;
