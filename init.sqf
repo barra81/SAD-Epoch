@@ -107,7 +107,7 @@ if (!isDedicated) then {
 	// DZAI Remote CLIENT
 	_nul = [] execVM "external\dzai_initclient.sqf";
 	
-	[] execVM "external\clanSkins.sqf";
+	//[] execVM "external\clanSkins.sqf";
 };
 
 //HideableRoofs
