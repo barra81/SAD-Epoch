@@ -358,6 +358,11 @@ _regular = true;
 			if (count _selectedRecipeInput > 0) then {
 			
 			
+			     findDisplay 106 closeDisplay 3000;
+				 /*
+				 _gearDialog = findDisplay 106;
+				 _gearDialog closeDisplay 3000;
+			     */
 					/////////check if enough room left in shed to craft
 				
 

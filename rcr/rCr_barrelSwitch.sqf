@@ -1,5 +1,5 @@
-_nearestBarrels = nearestObjects [vehicle player, ["Land_Fire_Barrel"], 50];
-_nearestTowers = nearestObjects [vehicle player, ["Land_Ind_IlluminantTower"], 50];
+_nearestBarrels = nearestObjects [vehicle player, ["Land_Fire_Barrel"], 65];
+_nearestTowers = nearestObjects [vehicle player, ["Land_Ind_IlluminantTower"], 65];
 _doLight = _this select 3 select 1;
 
 

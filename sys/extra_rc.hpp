@@ -1,9 +1,15 @@
 class ExtraRc {
 
+
 class ItemCompass {
   class menuItem1 {
-    text = "Combine Bars"
+    text = "Combine Bars";
 	script = "[[],1] call epoch_returnChange ";  
+ };
+ 
+  class menuItem2 {
+    text = "Vehicle Remote Menu";
+	script = "[] execVM 'keyAD\keys.sqf'";
  };
 }; 
 

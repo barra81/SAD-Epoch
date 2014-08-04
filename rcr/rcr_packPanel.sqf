@@ -15,7 +15,7 @@ if (!isNull _panel) then {
 				player playActionNow "Medic";
 
 				[player,_sfx,0,false] call dayz_zombieSpeak;
-				[player,50,true,(getPosATL player)] spawn player_alertZombies;
+				[player,10,true,(getPosATL player)] spawn player_alertZombies;
 
 				r_interrupt = false;
 				_animState = animationState player;
@@ -60,5 +60,5 @@ if (!isNull _panel) then {
 		
 		} else {
 		
-		 cutText [format["Cancelled packing of Panel !"], "PLAIN DOWN"];
+		 cutText [format["Canceled packing of Panel !"], "PLAIN DOWN"];
 		 };

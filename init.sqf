@@ -106,6 +106,8 @@ if (!isDedicated) then {
 
 	// DZAI Remote CLIENT
 	_nul = [] execVM "external\dzai_initclient.sqf";
+	
+	//[] execVM "external\clanSkins.sqf";
 };
 
 //HideableRoofs
@@ -130,6 +132,12 @@ if (isDedicated) then {
 
 [] execVM "rcr\jipHide.sqf";
 #include "rcr\REsec.sqf"
+
+
+
+//Kron String Functions
+
+ [] execVM "sys\kron\kron_strings.sqf";
 
 //Start Dynamic Weather
 execVM "sys\DynamicWeatherEffects.sqf";
