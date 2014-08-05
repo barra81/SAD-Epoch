@@ -713,9 +713,12 @@ if (_canDo && (speed player <= 1) && _hasToolbox) then {
 	s_player_deploybike = -1;
 };
 */
+
+
 if (_canDo && (speed player <= 1) && cursorTarget isKindOf "Old_bike_TK_CIV_EP1" && (cursorTarget getVariable ["SpawnedBike",0] == 1)) then {
 	if (s_player_deploybike2 < 0) then {
-		s_player_deploybike2 = player addaction[("<t color=""#007ab7"">" + ("Re-Pack Bike") +"</t>"),"external\bike2.sqf","",5,false,true,"", ""];
+	    _oldBike = cursorTarget;
+		s_player_deploybike2 = player addaction[("<t color=""#007ab7"">" + ("Re-Pack Bike") +"</t>"),"external\bike2.sqf",[_oldBike],5,false,true,"", ""];
 	};
 } else {
 	player removeAction s_player_deploybike2;
@@ -723,6 +726,7 @@ if (_canDo && (speed player <= 1) && cursorTarget isKindOf "Old_bike_TK_CIV_EP1"
 };
 // ---------------------------------------Deployable Bike End------------------------------------
 //------------------------------SkeetMachine-------------------------------------------
+/*
 ///////////Build
 _itemsPlayer = items player;
 _mags = magazines player;
@@ -736,6 +740,7 @@ if (_canDo && (speed player <= 1) && _hasStuff && _hasPPole) then {
 	player removeAction s_player_buildSkeet;
 	s_player_buildSkeet = -1;
 };
+*/
 ////////Switches/Removes
 _allowedDistance2 = 2;
 
