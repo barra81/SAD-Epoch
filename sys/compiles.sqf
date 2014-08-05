@@ -417,7 +417,7 @@ if (!isDedicated) then {
 
 	// trader menu code
 	if (DZE_ConfigTrader) then {
-		call compile preprocessFileLineNumbers "keyAD\compile\player_traderMenuConfig.sqf";
+		call compile preprocessFileLineNumbers "keyAD\player_traderMenuConfig.sqf";
 	}else{
 		call compile preprocessFileLineNumbers "keyAD\player_traderMenuHive.sqf";
 	};
