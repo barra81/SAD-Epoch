@@ -2,7 +2,7 @@
 	//player removeAction s_player_deploybike2;
 	_oldBikeString = _this select 3;
 	_oldBike = nearestObjects [player,["Old_bike_TK_CIV_EP1"],5];
-["conRed",format ["_oldBike: %1", _oldBike]] call diaglog;
+
 	
                 _sfx = "repair";
 				[1,1] call dayz_HungerThirst;
