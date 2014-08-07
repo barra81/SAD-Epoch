@@ -1,6 +1,9 @@
 
 	//player removeAction s_player_deploybike2;
-			
+	_oldBikeString = _this select 3;
+	_oldBike = nearestObjects [player,["Old_bike_TK_CIV_EP1"],5];
+
+	
                 _sfx = "repair";
 				[1,1] call dayz_HungerThirst;
 				player playActionNow "Medic";
@@ -38,10 +41,10 @@
 	if (_setOK) then {				
 	
 	player addWeapon "ItemToolbox";
-	deleteVehicle cursorTarget;
+	deleteVehicle (_oldBike select 0);
 	cutText [format["You have packed your bike and been given back your toolbox"], "PLAIN DOWN"];
 	
 	} else {
 	
-	cutText [format["Cancelled packing Bike!"], "PLAIN DOWN"];
+	cutText [format["Canceled packing Bike!"], "PLAIN DOWN"];
 	};
