@@ -26,7 +26,7 @@ vkc_claimingPrice = "ItemGoldBar10oz";
 ////////// Change Key costs this Item// /////////
 ////////////// see above examples ///////////////
 //////// set to "0" to disable the costs ////////
-vkc_Price = "ItemGoldBar10oz";
+vkc_Price = "ItemTinBar";
 /////////////////////////////////////////////////
 /////// Need KeyKit to use this function ////////
 ////////// 0 = Not needed | 1 = Needed //////////

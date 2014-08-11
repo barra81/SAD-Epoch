@@ -107,6 +107,10 @@ if (!isDedicated) then {
 	// DZAI Remote CLIENT
 	_nul = [] execVM "external\dzai_initclient.sqf";
 	
+	//MASTERKEY
+	_nil = [] execVM "external\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
+	
+	
 	//[] execVM "external\clanSkins.sqf";
 };
 
@@ -132,6 +136,7 @@ if (isDedicated) then {
 
 [] execVM "rcr\jipHide.sqf";
 #include "rcr\REsec.sqf"
+
 
 
 
