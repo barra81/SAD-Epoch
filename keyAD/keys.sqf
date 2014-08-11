@@ -34,6 +34,14 @@ if (_keyPosCount > 0) then {
     };
 	
 	
+	If ("ItemKeyKit" in _keysInInv) then {
+	
+	
+	_keysInInv = _keysInInv - ["ItemKeyKit"];
+	
+	};
+	
+
 	
 	 _KeyIdArr = [];
 	{
