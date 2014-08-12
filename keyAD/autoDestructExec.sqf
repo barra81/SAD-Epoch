@@ -1,112 +1,31 @@
-sleep 0.5;
-_charID = _this select 3 select 0;
-_totalKeys = _this select 3 select 1;
-_itemKey = _this select 3 select 2;
-_whichAction = _this select 3 select 3;
-_playerUID = getPlayerUID player;
-
-
-_counter = -1;
-for "_i" from 1 to _totalKeys do {
-_counter = _counter + 1;
-_menu = dayz_menu select _counter;
-player removeAction _menu;
-};
-player removeAction keyAD_exit;
+_ownedVeh = ownedVeh;
+_ownedVehCounter = _this select 0;
+_whichAction = _this select 1;
+_counterItemKey = _this select 2;
+_itemKey = keysInInv select _counterItemKey;
 
 
 
-
-    _filtered = [[],[],[],[],[]]; 
-    _cfg = (configFile >> "CfgVehicles"); 
-    for "_i" from 0 to ((count _cfg)-1) do { 
-        if (isClass ((_cfg select _i) ) ) then { 
-            _cfgName = configName (_cfg select _i); 
-								
-			
-            if ( (_cfgName isKindOf "Air") && (getNumber ((_cfg select _i) >> "scope") == 2) ) then { 
-                _side = getNumber ((_cfg select _i) >> "side"); 
-                _temp = _filtered select _side; 
-                _temp set [count _temp, _cfgName ]; 
-                _filtered set [_side, _temp]; 
-            }; 
-			
-		    if ( (_cfgName isKindOf "Car") && (getNumber ((_cfg select _i) >> "scope") == 2) ) then { 
-                _side = getNumber ((_cfg select _i) >> "side"); 
-                _temp = _filtered select _side; 
-                _temp set [count _temp, _cfgName ]; 
-                _filtered set [_side, _temp]; 
-            }; 
-						
-        }; 
-    };  
-
-	
-  _filteredCount = count _filtered;
-  _vehicle = vehicles;
-  _vehIdArr = [];
-  _notExist = false;
-  
-  
-  
-  
-{
-  _veh = _x;
-  _abort = false;
-  _vehID = _x getVariable ["CharacterID","0"];
-  _vehIDNum = parseNumber _vehID;
-  _vehIdArr set [(count _vehIdArr),_vehIDNum];
-  _vehPUID = _veh getVariable ["OwnerPUID","0"];
-  _typeOfX = typeOf _x;
+_vehicle = _ownedVeh select _ownedVehCounter;
+_typeOfVeh = typeOf _vehicle;
+_VehName = getText(configFile >> "CfgVehicles" >> _typeOfVeh >> "displayName");
 
 
-
-// ["conGreen",format ["_vehPUID: %1, _veh: %2", _vehPUID, _veh]] call diaglog;
-  
-     _existCheck = false;  
-
-     _counter = -1;
-	 for "_i" from 1 to _filteredCount do {
-	      _counter = _counter + 1;
-	      _subArr = _filtered select _counter;
-		         
-		  if (!(_typeOfX in _subArr)) then {
-				
-				_notExist = true;
-				
-			} else {
-                _existCheck = true;             
-                _notExist = false;
-			};	
-              
-			  if (_existCheck) exitWith {};
-  
-        };
-
-  
-  
-
-  if ((_vehIDNum == _charID) && !_notExist) then {
-        
-       
-       _typeOfVeh = typeOf _x;
-       _vehDis = player distance _x;
-	   _maxDis = 4000;
-       
-	   if (_whichAction == 1) then {		
+ _vehDis = player distance _vehicle;
+ _maxDis = 4000;
+          
+   if (_whichAction == 1) then {		
 								
 		   _maxDis =20000;
-		};		
-				
-				
-			 if (_playerUID == _vehPUID) then { 
+	};				 
+			 
 			  
 				if (_vehDis <= _maxDis) then {
 
 		             if (_whichAction > 1) then {
-                         cutText [format["Prepare for BOOMING of %1!", _typeOfVeh], "PLAIN DOWN"];
+                         cutText [format["Prepare for BOOMING of %1!", _VehName], "PLAIN DOWN"];
                         } else {
-						 cutText [format["Searching for %1!", _typeOfVeh], "PLAIN DOWN"];
+						 cutText [format["Searching for %1!", _VehName], "PLAIN DOWN"];
 				        };
 						
                     [1,1] call dayz_HungerThirst;
@@ -150,10 +69,13 @@ player removeAction keyAD_exit;
 					
 					   if (_whichAction > 1) then {
 					  
-                           _x setDamage 1;
-                           player removeWeapon _itemKey;
-                           cutText [format["%1 got BOOMED!", _typeOfVeh], "PLAIN DOWN"];
-		                   _abort = true;
+                           _vehicle setDamage 1;
+						   
+						   if ((count _ownedVeh) == 1) then {
+                               player removeWeapon _itemKey;
+						  };
+                           cutText [format["%1 got BOOMED!", _VehName], "PLAIN DOWN"];
+
 						   
 						} else {
                            openMap true;
@@ -166,12 +88,12 @@ player removeAction keyAD_exit;
 									  while {visibleMap} do {
 									 
 												 
-						                       _pos = getposATL _x;
+						                       _pos = getposATL _vehicle;
 		                                       if (visibleMap) then {
 			                                       deleteMarkerLocal _typeOfVeh;
 			                                       _mrkr = createMarkerLocal [_typeOfVeh,_pos];
 			                                       _mrkr setMarkerTypeLocal "DestroyedVehicle";
-			                                       _mrkr setMarkerTextLocal format ["%1",_typeOfVeh];
+			                                       _mrkr setMarkerTextLocal format ["%1",_VehName];
 		                                        };
 							
 							
@@ -183,7 +105,7 @@ player removeAction keyAD_exit;
 							                   _pos set [2, (_pos select 2) + 1.5];
 		                                       _screen = worldToScreen _pos;
 							                   _picon = _pIcons select 0;
-							                   _tag = composeText [image _Plicon," ",_typeOfVeh];
+							                   _tag = composeText [image _Plicon," ",_VehName];
 							
 							                   _scale = 0;
 				                               _sx = _screen select 0;
@@ -206,38 +128,19 @@ player removeAction keyAD_exit;
 						                };
 										
 						               deleteMarkerLocal _typeOfVeh;         
-                                    };	
-									
-						    _abort = true; 
-						   
+                                    };																   
 						};   
 						   
 				    }else {
 
-		              cutText [format["Canceled action for %1 !", _typeOfVeh], "PLAIN DOWN"];
-					  _abort = true;
+		              cutText [format["Canceled action for %1 !", _VehName], "PLAIN DOWN"];
+
 	                };
 					
 				} else {
                   
-                  cutText [format["%1 is out of range!", _typeOfVeh], "PLAIN DOWN"];				  
-				  _abort = true;	
+                  cutText [format["%1 is out of range!", _VehName], "PLAIN DOWN"];				  
+	
 				};
-              } else {
-                  cutText [format["%1 is not yours!", _typeOfVeh], "PLAIN DOWN"];				  
-				  _abort = true;
-			    };	
-            };	   
-     
-
-    if (_abort) exitWith {};
-	
-}forEach _vehicle;
-
-
-
-  if ((_notExist) || (!(_charID in _vehIdArr)))  then {
-
-      cutText [format["This vehicle doesnt exists any more!"], "PLAIN DOWN"];
-    };
-	
+				
+				

@@ -41,7 +41,7 @@ DZE_BuildOnRoads = true; // Default: False
 DZE_PlotPole = [50,50];
 
 MaxVehicleLimit = 150; // Default = 50
-MaxDynamicDebris = 100; // Default = 100
+MaxDynamicDebris = 0; // Default = 100
 MaxMineVeins = 15;
 
 dayz_MapArea = 10000; // Default = 10000
@@ -107,6 +107,10 @@ if (!isDedicated) then {
 	// DZAI Remote CLIENT
 	_nul = [] execVM "external\dzai_initclient.sqf";
 	
+	//MASTERKEY
+	_nil = [] execVM "external\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
+	
+	
 	//[] execVM "external\clanSkins.sqf";
 };
 
@@ -132,6 +136,7 @@ if (isDedicated) then {
 
 [] execVM "rcr\jipHide.sqf";
 #include "rcr\REsec.sqf"
+
 
 
 

@@ -158,7 +158,7 @@ while {true} do
 				if (BTC_lifted == 0 && BTC_lift == 1  && !(_cargo getVariable ["BTC_Cannot_Lift", false])) then	{
 					_name_cargo  = getText (configFile >> "cfgVehicles" >> typeof _cargo >> "displayName");
 					_text_action = ("<t color=""#ED2744"">" + "Lift " + (_name_cargo) + "</t>");
-					BTC_liftActionId = _chopper addAction [_text_action, "=BTC=_Logistic\=BTC=_Lift\=BTC=_attachCargo.sqf", [_cargo, _name_cargo], 7, true, true];
+					BTC_liftActionId = _chopper addAction [_text_action, "=BTC=_Logistic\=BTC=_Lift\=BTC=_attachCargo.sqf", [_cargo, _name_cargo], 0, true, true];
 					BTC_lift = 0;
 				};
 			};

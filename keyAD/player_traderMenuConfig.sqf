@@ -125,8 +125,9 @@ TraderDialogLoadItemList = {
 		
 		_trade_any_vehicle = "trade_any_vehicle";
 		_trade_any_vehicle_old = "trade_any_vehicle_old";
+		_trade_any_vehicle_free = "trade_any_vehicle_free";
 		_File = "";
-		if (_afile == _trade_any_vehicle || _afile == _trade_any_vehicle_old) then {
+		if (_afile == _trade_any_vehicle || _afile == _trade_any_vehicle_old || _afile == _trade_any_vehicle_free) then {
 		
 		_File = "keyAD\" + _afile + ".sqf";
 		} else {

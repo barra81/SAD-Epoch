@@ -20,10 +20,14 @@ _actionArray = _this select 3;
 _targetVehicle = _actionArray select 0;
 _targetVehicleID = _targetVehicle getVariable ["ObjectID","0"];
 _targetVehicleUID = _targetVehicle getVariable ["ObjectUID","0"];
-	
+_targetVehiclePUID = _targetVehicle getVariable ["ownerPUID","0"];	
+_playerUID = getPlayerUID player;
+				  
+
 
 /* Check if the Vehicle is in the Database, if false exit */
 if (_targetVehicleID == "0" && _targetVehicleUID == "0") exitWith {cutText ["Sorry but\nthis Vehicle does not support\nKeychange/Claiming!","PLAIN",0];s_player_copyToKey = -1;s_player_claimVehicle = -1;};
+if (_targetVehiclePUID != _playerUID && _targetVehiclePUID != "0") exitWith {cutText ["You cant make keys of vehicles you dont have buyed on your own !", "PLAIN"];s_player_copyToKey = -1;s_player_claimVehicle = -1;};
 
 /* Setup more variables */
 _playerKeys = _actionArray select 1;
@@ -145,6 +149,14 @@ if (keyNameSelect != "exitscript") then {
 	/* Lock the vehicle */
 	_targetVehicle setVehicleLock "LOCKED";
 	
+	if (_targetVehiclePUID == "0") then {
+	_targetVehicle setVariable ["OwnerPUID",_playerUID,true];
+	} else {
+	_targetVehicle setVariable ["OwnerPUID",_targetVehiclePUID,true];
+	};
+
+		
+		
 	/* The super duper OneForAllAnimation... */
 	player playActionNow "Medic";
 	
@@ -158,7 +170,7 @@ if (keyNameSelect != "exitscript") then {
 	};
 	
 	/* This calls the custom update function which we put it in server_updateObject.sqf */
-	PVDZE_veh_Update = [_targetVehicle, "vehiclekey", player, _targetVehicleClassname, keyNumberSelect, keyNameSelect, _targetVehicleID, _targetVehicleUID]; 
+	PVDZE_veh_Update = [_targetVehicle, "vehiclekey", player, _targetVehicleClassname, keyNumberSelect, keyNameSelect, _targetVehicleID, _targetVehicleUID,_targetVehiclePUID]; 
 	publicVariableServer "PVDZE_veh_Update"; 
 
 	/* Wait for success or timeout */
